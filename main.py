@@ -6,11 +6,11 @@ API_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYWYwZDM3NWIyZWRkMmJmZWQ1NTFlYTgxZG
 
 app = Flask(__name__)
 
-list_type = {"popular": "Popular", "now_playing": "Now playing", "top_rated": "Top rated", "upcoming": "Upcoming"}
+list_type = {"popular": "Popular", "now_playing": "Now playing", "top_rated": "Top rated", "upcoming": "Upcoming", "latest": "Latest"}
 
 @app.route('/')
 def homepage():
-
+    
     selected_list = request.args.get('list_type', "popular")
     if selected_list not in list_type:
         selected_list = 'popular'
